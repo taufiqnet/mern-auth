@@ -1,15 +1,20 @@
 const express = require("express");
 const signupRoute = require("./routes/signup");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 
 const connectDB = require('./config/dbConfig');
 require('dotenv').config();
+const createAdminAccount = require("./scripts/admin")
 
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use("/api/v1/user", signupRoute);
+
+createAdminAccount();
 
 const start = async () => {
     try {
