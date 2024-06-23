@@ -1,5 +1,6 @@
 const express = require("express");
 const signupRoute = require("./routes/signup");
+const loginRoute = require("./routes/login")
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
@@ -13,6 +14,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api/v1/user", signupRoute);
+app.use("/api/v1/auth", loginRoute);
 
 createAdminAccount();
 
