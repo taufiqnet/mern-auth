@@ -19,9 +19,9 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("email: ", formData.email);
-    console.log("name: ", formData.name);
-    console.log("password: ", formData.password);
+    // console.log("email: ", formData.email);
+    // console.log("name: ", formData.name);
+    // console.log("password: ", formData.password);
 
     try {
       const response = await fetch(
